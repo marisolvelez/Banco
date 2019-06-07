@@ -23,7 +23,7 @@ namespace Helper
     {
         public MainWindow()
         {
-            //InitializeComponent();
+            InitializeComponent();
 
         }
     }
