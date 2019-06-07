@@ -27,7 +27,7 @@ namespace ServiceWCF
 
         public bool Update(Empleado EmployeeP)
         {
-            throw new NotImplementedException();
+            return false;
         }
 
         //public bool Update(Empleado EmployeeP)
