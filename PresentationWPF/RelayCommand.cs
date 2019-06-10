@@ -5,8 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
-namespace Helper
-
+namespace PresentationWPF
 {
     public class RelayCommand : ICommand
     {
@@ -36,4 +35,5 @@ namespace Helper
         private readonly Action<object> _execute;
         private readonly Predicate<object> _canExecute;
     }
+
 }

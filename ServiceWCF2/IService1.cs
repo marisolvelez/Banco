@@ -1,34 +1,27 @@
-﻿using Model.Model;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.Text;
+using Model.Model;
 
 namespace ServiceWCF
 {
-    // NOTE: You can use the "Rename" command on the "Refactor" menu to change the interface name "IService1" in both code and config file together.
+    // NOTA: puede usar el comando "Rename" del menú "Refactorizar" para cambiar el nombre de interfaz "IService1" en el código y en el archivo de configuración a la vez.
     [ServiceContract]
     public interface IService1
     {
 
         [OperationContract]
-        string GetData(int value);
-
-        [OperationContract]
         bool Saved(Empleado EmployeeP);
 
-
         [OperationContract]
-        CompositeType GetDataUsingDataContract(CompositeType composite);
-
-        // TODO: Add your service operations here
+        bool Update(Empleado EmployeeP);
     }
 
-
-    // Use a data contract as illustrated in the sample below to add composite types to service operations.
+    // Utilice un contrato de datos, como se ilustra en el ejemplo siguiente, para agregar tipos compuestos a las operaciones de servicio.
     [DataContract]
     public class CompositeType
     {

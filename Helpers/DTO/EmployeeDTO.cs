@@ -23,21 +23,28 @@ namespace Helper.DTO
         #region Variables 
         ////debe haver una propiedad privada 
         private string _fullname;
-        private string _cargo;
+        private string _position;
+        private int _id;
         #endregion
 
         #region Propiedades
         //Propiedades publica es la que va en la vista
-        public string fullname
+        public string FullName
         {
             get { return _fullname; }
             set{SetProperty(ref _fullname, value);}
         }
 
-        public string Cargo
+        public string Position
         {
-            get { return _cargo; }
-            set {SetProperty(ref _cargo, value);}
+            get { return _position; }
+            set {SetProperty(ref _position, value);}
+        }
+
+        public int Id
+        {
+            get { return _id; }
+            set { SetProperty(ref _id, value); }
         }
         #endregion
 

@@ -13,8 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Helper
-
+namespace PresentationWPF
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -24,7 +23,6 @@ namespace Helper
         public MainWindow()
         {
             InitializeComponent();
-
         }
     }
 }

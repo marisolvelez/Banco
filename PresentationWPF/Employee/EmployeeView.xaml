@@ -1,0 +1,34 @@
+﻿<Window x:Class="PresentationWPF.Employee.EmployeeView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PresentationWPF.Employee"
+        mc:Ignorable="d"
+        Title="EmployeeView" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width=".22*"></ColumnDefinition>
+            <ColumnDefinition Width=".22*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height=".2*"></RowDefinition>
+            <RowDefinition Height=".2*"></RowDefinition>
+            <RowDefinition Height=".2*"></RowDefinition>
+            <RowDefinition ></RowDefinition>
+            <RowDefinition Height=".2*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" Grid.Column="0" Margin="5,0,5,10" Text="FullName"></TextBlock>
+        <TextBox Name="FullName" Grid.Row="0" Grid.Column="1" Text="{Binding Employee.FullName, Mode=TwoWay}"></TextBox>
+
+        <TextBlock Grid.Row="1" Grid.Column="0" Margin="5,0,5,10" Text="Position"></TextBlock>
+        <TextBox Name="Position" Grid.Row="1" Grid.Column="1" Text="{Binding Employee.Position, Mode=TwoWay}"></TextBox>
+
+        <TextBlock Grid.Row="2" Grid.Column="0" Margin="5,0,5,10" Text="number"></TextBlock>
+        <TextBox Name="Number" Grid.Row="2" Grid.Column="1" Text="{Binding Employee.Id, Mode=TwoWay}"></TextBox>
+
+        <Button Grid.Row="4" Grid.Column="0" Command="{Binding SavedCommand}">Save</Button>
+    </Grid>
+
+</Window>
