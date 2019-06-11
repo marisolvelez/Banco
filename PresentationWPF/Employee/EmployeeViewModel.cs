@@ -75,6 +75,7 @@ namespace PresentationWPF.Employee
                 empleadoP.Position = Employee.Position;
                 empleadoP.IdEmployee = Employee.Id;
 
+
                 CallingService.Saved(empleadoP);
             }
             catch (Exception ex)
