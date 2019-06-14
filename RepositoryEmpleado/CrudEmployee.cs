@@ -9,14 +9,32 @@ namespace Repository
 {
     public class CrudEmployee
     {
+
         public bool Saved(Empleado EmployeeP)
         {
-            using (var context = new BD_BancoEntities())
+            try
             {
-                context.Empleadoes.Add(EmployeeP);
-                context.SaveChanges();
-                return true;
+                using (var context = new BD_BancoEntities())
+                {
+                    context.Empleadoes.Add(EmployeeP);
+                    context.SaveChanges();
+                    return true;
+
+                }
             }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            //{ }
+            //using (var context = new BD_BancoEntities())
+            //{
+            //    context.Empleadoes.Add(EmployeeP);
+            //    context.SaveChanges();
+            //    return true;
+
+            //}
         }
     }
 }
