@@ -20,19 +20,6 @@ namespace ServiceWCF
             return string.Format("You entered: {0}", value);
         }
 
-        public CompositeType GetDataUsingDataContract(CompositeType composite)
-        {
-            if (composite == null)
-            {
-                throw new ArgumentNullException("composite");
-            }
-            if (composite.BoolValue)
-            {
-                composite.StringValue += "Suffix";
-            }
-            return composite;
-        }
-
         public bool Saved(Empleado employeeP)
         {
             if (Bussiness.Saved(employeeP) != false)
@@ -40,5 +27,11 @@ namespace ServiceWCF
             return false;
         }
 
+        public bool Delete(Empleado cedula)
+        {
+            if (Bussiness.Delete(cedula) != false)
+                return true;
+            return false;
+        }
     }
 }

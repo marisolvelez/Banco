@@ -20,9 +20,10 @@ namespace ServiceWCF
         [OperationContract]
         bool Saved(Empleado EmployeeP);
 
-
         [OperationContract]
-        CompositeType GetDataUsingDataContract(CompositeType composite);
+        bool Delete(Empleado cedula);
+
+      
 
         // TODO: Add your service operations here
     }

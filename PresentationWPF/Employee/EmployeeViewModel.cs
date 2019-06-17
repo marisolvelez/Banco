@@ -86,6 +86,23 @@ namespace PresentationWPF.Employee
         }
 
 
+        private ICommand _UpdateCommand;
+
+        public ICommand UpdateCommand
+        {
+            get {
+                if (_UpdateCommand == null)
+                {
+                    _UpdateCommand = new RelayCommand(param => Update(), null);
+                }
+                return _UpdateCommand;
+            }
+        }
+
+        public void Update()
+        {
+
+        }
 
         private ICommand _DeleteCommand;
 
