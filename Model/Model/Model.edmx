@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="BD_BancoModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="BD_BancoModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Cliente">
           <Key>
             <PropertyRef Name="IdClient" />
@@ -24,17 +24,17 @@
           <Key>
             <PropertyRef Name="IdEmployee" />
           </Key>
-          <Property Name="IdEmployee" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdEmployee" Type="int" Nullable="false" />
           <Property Name="FullName" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="Position" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Active" Type="int" />
         </EntityType>
         <EntityContainer Name="BD_BancoModelStoreContainer">
           <EntitySet Name="Cliente" EntityType="Self.Cliente" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="count" EntityType="Self.count" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Empleado" EntityType="Self.Empleado" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="BD_BancoModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -53,19 +53,20 @@
           <Property Name="Idcount" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="balance" Type="Int32" Nullable="false" />
         </EntityType>
+        <EntityContainer Name="BD_BancoEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Clientes" EntityType="Self.Cliente" />
+          <EntitySet Name="counts" EntityType="Self.count" />
+          <EntitySet Name="Empleadoes" EntityType="BD_BancoModel.Empleado" />
+        </EntityContainer>
         <EntityType Name="Empleado">
           <Key>
             <PropertyRef Name="IdEmployee" />
           </Key>
-          <Property Name="IdEmployee" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="FullName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Position" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="IdEmployee" Type="Int32" Nullable="false" />
+          <Property Name="FullName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Position" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Active" Type="Int32" />
         </EntityType>
-        <EntityContainer Name="BD_BancoEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Clientes" EntityType="Self.Cliente" />
-          <EntitySet Name="counts" EntityType="Self.count" />
-          <EntitySet Name="Empleadoes" EntityType="Self.Empleado" />
-        </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -92,9 +93,10 @@
           <EntitySetMapping Name="Empleadoes">
             <EntityTypeMapping TypeName="BD_BancoModel.Empleado">
               <MappingFragment StoreEntitySet="Empleado">
-                <ScalarProperty Name="IdEmployee" ColumnName="IdEmployee" />
-                <ScalarProperty Name="FullName" ColumnName="FullName" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
                 <ScalarProperty Name="Position" ColumnName="Position" />
+                <ScalarProperty Name="FullName" ColumnName="FullName" />
+                <ScalarProperty Name="IdEmployee" ColumnName="IdEmployee" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

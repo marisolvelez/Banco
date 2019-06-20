@@ -26,18 +26,18 @@ namespace Bussiness
 
         }
 
-        public bool Delete(Empleado cedula)
-        {
-            try
-            {
-                if (repository.Delete(cedula) != false)
-                    return true;
-                return false;
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
+        //public bool Delete(Empleado cedula)
+        //{
+        //    try
+        //    {
+        //        if (repository.Delete(cedula) != false)
+        //            return true;
+        //        return false;
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        throw ex;
+        //    }
+        //}
     }
 }

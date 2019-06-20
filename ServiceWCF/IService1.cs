@@ -20,8 +20,8 @@ namespace ServiceWCF
         [OperationContract]
         bool Saved(Empleado EmployeeP);
 
-        [OperationContract]
-        bool Delete(Empleado cedula);
+        //[OperationContract]
+        //bool Delete(Empleado cedula);
 
       
 
