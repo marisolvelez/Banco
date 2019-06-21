@@ -74,7 +74,7 @@ namespace PresentationWPF.Employee
                 empleadoP.FullName = Employee.FullName;
                 empleadoP.Position = Employee.Position;
                 empleadoP.IdEmployee = Employee.Id;
-
+                empleadoP.Active = 1;
 
                 CallingService.Saved(empleadoP);
             }

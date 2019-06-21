@@ -27,11 +27,11 @@ namespace ServiceWCF
             return false;
         }
 
-        public bool Delete(Empleado cedula)
-        {
-            if (Bussiness.Delete(cedula) != false)
-                return true;
-            return false;
-        }
+        //public bool Delete(Empleado cedula)
+        //{
+        //    if (Bussiness.Delete(cedula) != false)
+        //        return true;
+        //    return false;
+        //}
     }
 }

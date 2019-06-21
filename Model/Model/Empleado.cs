@@ -17,5 +17,6 @@ namespace Model.Model
         public int IdEmployee { get; set; }
         public string FullName { get; set; }
         public string Position { get; set; }
+        public Nullable<int> Active { get; set; }
     }
 }

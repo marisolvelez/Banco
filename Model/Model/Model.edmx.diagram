@@ -7,7 +7,7 @@
       <Diagram DiagramId="f8a3c1bec2dd4100a9ddb83e6666aa97" Name="Diagram1">
         <EntityTypeShape EntityType="BD_BancoModel.Cliente" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="BD_BancoModel.count" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="BD_BancoModel.Empleado" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_BancoModel.Empleado" Width="1.5" PointX="0.75" PointY="3.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
