@@ -1,0 +1,171 @@
+﻿<UserControl x:Class="ProblemaRibbon.ProblemaRibbonUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ProblemaRibbon"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800"
+              xmlns:dxr="http://schemas.devexpress.com/winfx/2008/xaml/ribbon"
+        xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+        xmlns:dxb="http://schemas.devexpress.com/winfx/2008/xaml/bars"
+        xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors">
+    <Grid Margin="2">
+        <dxb:BarManager x:Name="barManager">
+            <dxb:BarManager.Items>
+                <dxb:BarButtonItem x:Name="bSearch" Content="Search" Glyph="pack://application:,,,/ProblemaRibbon;component/Images/zoomin16.png" LargeGlyph="pack://application:,,,/ProblemaRibbon;component/Images/zoomin32.png" />
+                <dxb:BarButtonItem x:Name="bClean" Content="Clean" Glyph="pack://application:,,,/ProblemaRibbon;component/Images/3_Eliminar-16.png" LargeGlyph="pack://application:,,,/ProblemaRibbon;component/Images/3_Eliminar-32.png" />
+
+                <dxb:BarButtonItem x:Name="bRecomendation" Content="Hola"/>
+                <dxb:BarCheckItem x:Name="ChkSearchByCaseNumber"   Content="By Event Number">
+                </dxb:BarCheckItem>
+
+                <dxb:BarCheckItem x:Name="ChkSearchByEvent"   Content="By Case Number">
+                </dxb:BarCheckItem>
+
+                <dxb:BarEditItem x:Name="FromEvent" Content="From Event #:" EditWidth="90">
+                    <dxb:BarEditItem.EditSettings>
+                        <dxe:TextEditSettings Name="From_Event" />
+                    </dxb:BarEditItem.EditSettings>
+                </dxb:BarEditItem>
+
+                <dxb:BarEditItem x:Name="ToEvent" Content="To Event #:" EditWidth="90">
+                    <dxb:BarEditItem.EditSettings>
+                        <dxe:TextEditSettings Name="To_Event" />
+                    </dxb:BarEditItem.EditSettings>
+                </dxb:BarEditItem>
+
+                <dxb:BarEditItem x:Name="FromDate" Content="From Date:" EditWidth="90">
+                    <dxb:BarEditItem.EditSettings>
+                        <dxe:TextEditSettings Name="From_Date" />
+                    </dxb:BarEditItem.EditSettings>
+                </dxb:BarEditItem>
+
+                <dxb:BarEditItem x:Name="ToDate" Content="To Date:" EditWidth="90">
+                    <dxb:BarEditItem.EditSettings>
+                        <dxe:TextEditSettings Name="To_Date" />
+                    </dxb:BarEditItem.EditSettings>
+                </dxb:BarEditItem>
+
+                <dxb:BarEditItem x:Name="Address" Content="Address:" EditWidth="90">
+                    <dxb:BarEditItem.EditSettings>
+                        <dxe:TextEditSettings Name="Address1" />
+                    </dxb:BarEditItem.EditSettings>
+                </dxb:BarEditItem>
+
+                <dxb:BarEditItem x:Name="Cross1" Content="Cross st 1:" EditWidth="90">
+                    <dxb:BarEditItem.EditSettings>
+                        <dxe:TextEditSettings Name="Cross_1" />
+                    </dxb:BarEditItem.EditSettings>
+                </dxb:BarEditItem>
+
+                <dxb:BarEditItem x:Name="Cross2" Content="Cross st 2:" EditWidth="90">
+                    <dxb:BarEditItem.EditSettings >
+                        <dxe:TextEditSettings Name="Cross_2" />
+                    </dxb:BarEditItem.EditSettings>
+                </dxb:BarEditItem>
+
+                <dxb:BarEditItem x:Name="txtZones" Content="Zone:" EditWidth="115" EditHeight="49">
+                    <dxb:BarEditItem.EditSettings >
+                        <dxe:ButtonEditSettings AllowDefaultButton="False" IsTextEditable="False" TextWrapping="Wrap">
+                            <dxe:ButtonEditSettings.Buttons>
+                                <dxe:ButtonInfo GlyphKind="Search"/>
+                            </dxe:ButtonEditSettings.Buttons>
+                        </dxe:ButtonEditSettings>
+                    </dxb:BarEditItem.EditSettings>
+                    <dxb:BarEditItem.EditStyle>
+                        <Style TargetType="dxe:TextEdit">
+                            <Setter Property="FontSize" Value="9"  />
+                        </Style>
+                    </dxb:BarEditItem.EditStyle>
+                </dxb:BarEditItem>
+
+                <dxb:BarEditItem x:Name="Phone_" Content="Phone:" EditWidth="90">
+                    <dxb:BarEditItem.EditSettings>
+                        <dxe:TextEditSettings Name="Phone" />
+                    </dxb:BarEditItem.EditSettings>
+                </dxb:BarEditItem>
+
+                <dxb:BarEditItem x:Name="Call"  Content="Call Type:" EditWidth="90" EditHeight="75">
+                    <dxb:BarEditItem.EditTemplate>
+                        <DataTemplate>
+                            <dxe:ComboBoxEdit x:Name="Call"  Width="90" />
+                        </DataTemplate>
+                    </dxb:BarEditItem.EditTemplate>
+                </dxb:BarEditItem>
+
+                <dxb:BarEditItem x:Name="priority"  Content="Priority" EditWidth="90" EditHeight="75">
+                    <dxb:BarEditItem.EditTemplate>
+                        <DataTemplate>
+                            <dxe:ComboBoxEdit x:Name="Status"  Width="90" />
+                        </DataTemplate>
+                    </dxb:BarEditItem.EditTemplate>
+                </dxb:BarEditItem>
+
+                <dxb:BarEditItem x:Name="Cal"  Content="Call Taker:" EditWidth="90" EditHeight="75">
+                    <dxb:BarEditItem.EditTemplate>
+                        <DataTemplate>
+                            <dxe:ComboBoxEdit x:Name="Call"  Width="90" />
+                        </DataTemplate>
+                    </dxb:BarEditItem.EditTemplate>
+                </dxb:BarEditItem>
+
+                <dxb:BarEditItem x:Name="Common"  Content="Dispatcher:" EditWidth="90" EditHeight="75">
+                    <dxb:BarEditItem.EditTemplate>
+                        <DataTemplate>
+                            <dxe:ComboBoxEdit x:Name="Common"  Width="90" />
+                        </DataTemplate>
+                    </dxb:BarEditItem.EditTemplate>
+                </dxb:BarEditItem>
+
+                <dxb:BarEditItem x:Name="Status"  Content="Status:" EditWidth="90" EditHeight="75">
+                    <dxb:BarEditItem.EditTemplate>
+                        <DataTemplate>
+                            <dxe:ComboBoxEdit x:Name="Call"  Width="90" />
+                        </DataTemplate>
+                    </dxb:BarEditItem.EditTemplate>
+                </dxb:BarEditItem>
+
+
+            </dxb:BarManager.Items>
+
+            <DockPanel>
+                <dxr:RibbonControl x:Name="ribbonControl1"  AllowRibbonNavigationFromEditorOnTabPress="True" RibbonStyle="Office2010" RibbonTitleBarVisibility="Collapsed"   ToolbarShowMode="Hide"  DockPanel.Dock="Top">
+                    <dxr:RibbonDefaultPageCategory x:Name="ribbonPageCategory">
+                        <dxr:RibbonPage Caption="Search" IsSelected="True">
+                            <dxr:RibbonPageGroup AllowCollapse="False">
+                                <dxb:BarCheckItemLink BarItemName="ChkSearchByEvent" Name="SearchByEvent" />
+                                <dxb:BarCheckItemLink BarItemName="ChkSearchByCaseNumber" Name="SearchCaseNumber" />
+                            </dxr:RibbonPageGroup>
+
+                            <dxr:RibbonPageGroup AllowCollapse="False">
+                                <dxb:BarEditItemLink BarItemName="FromEvent" Name="txFrom_Event" />
+                                <dxb:BarEditItemLink BarItemName="ToEvent" Name="txTo_Event" />
+                                <dxb:BarEditItemLink BarItemName="FromDate" Name="txFromDate" />
+
+                                <dxb:BarEditItemLink BarItemName="ToDate" Name="txToDate" />
+                                <dxb:BarEditItemLink BarItemName="Address" Name="txAddress" />
+                                <dxb:BarEditItemLink BarItemName="Cross1" Name="txCross1" />
+
+                                <dxb:BarEditItemLink BarItemName="Cross2" Name="txCross2" />
+                                <dxb:BarEditItemLink BarItemName="txtZones" Name="txZone" />
+                                <dxb:BarEditItemLink BarItemName="Phone_" Name="txPhone" />
+
+                                <dxb:BarEditItemLink BarItemName="Call" Name="txCall" />
+                                <dxb:BarEditItemLink BarItemName="priority" Name="txpriority" />
+                                <dxb:BarEditItemLink BarItemName="Cal" Name="txCal" />
+
+                                <dxb:BarEditItemLink BarItemName="Common" Name="common" />
+                                <dxb:BarEditItemLink BarItemName="Status" Name="status" />
+                                <dxb:BarButtonItemLink BarItemName="bSearch"/>
+                                <dxb:BarButtonItemLink BarItemName="bClean"/>
+
+                            </dxr:RibbonPageGroup>
+
+                        </dxr:RibbonPage>
+                    </dxr:RibbonDefaultPageCategory>
+                </dxr:RibbonControl>
+            </DockPanel>
+        </dxb:BarManager>
+    </Grid>
+</UserControl>

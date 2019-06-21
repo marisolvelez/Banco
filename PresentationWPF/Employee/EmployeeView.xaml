@@ -13,6 +13,7 @@
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="20"></RowDefinition>
             <RowDefinition Height=".2*"></RowDefinition>
             <RowDefinition Height=".2*"></RowDefinition>
             <RowDefinition Height=".2*"></RowDefinition>
@@ -23,24 +24,27 @@
         <Ribbon x:Name="RibbonWin"  SelectedIndex="0" Grid.ColumnSpan="2">
             <RibbonTab Header="Home">
                 <RibbonGroup x:Name="ClipboardGroup" Header="Funtions">
+                    <RibbonButton Label="Save" LargeImageSource="/image/Save.jpg" Command="{Binding SavedCommand}" />
                     <!--<RibbonButton SmallImageSource="Images\Save.png" Label="Save" KeyTip="X" />-->
                 </RibbonGroup>
             </RibbonTab>
             
         </Ribbon>
+        
+        
 
-        <TextBlock Grid.Row="1" Grid.Column="0" Margin="5,0,5,10" Text="FullName"></TextBlock>
-        <TextBox Name="FullName" Grid.Row="1" Grid.Column="1" Text="{Binding Employee.FullName, Mode=TwoWay}"></TextBox>
+        <TextBlock Grid.Row="2" Grid.Column="0" Margin="5,0,5,10" Text="FullName"></TextBlock>
+        <TextBox Name="FullName" Margin="1,3,6,0" VerticalAlignment="Top" Grid.Row="2" Grid.Column="1" Text="{Binding Employee.FullName, Mode=TwoWay}"></TextBox>
 
-        <TextBlock Grid.Row="2" Grid.Column="0" Margin="5,0,5,10" Text="Position"></TextBlock>
-        <TextBox Name="Position" Grid.Row="2" Grid.Column="1" Text="{Binding Employee.Position, Mode=TwoWay}"></TextBox>
+        <TextBlock Grid.Row="3" Grid.Column="0" Margin="5,0,5,10" Text="Position"></TextBlock>
+        <TextBox Name="Position" Margin="1,3,6,0" VerticalAlignment="Top"  Grid.Row="3" Grid.Column="1" Text="{Binding Employee.Position, Mode=TwoWay}"></TextBox>
 
         <TextBlock Grid.Row="4" Grid.Column="0" Margin="5,0,5,10" Text="number"></TextBlock>
-        <TextBox Name="Number" Grid.Row="3" Grid.Column="1" Text="{Binding Employee.Id, Mode=TwoWay}"></TextBox>
+        <TextBox Name="Number" Margin="1,3,6,0" VerticalAlignment="Top" Grid.Row="4" Grid.Column="1" Text="{Binding Employee.Id, Mode=TwoWay}"></TextBox>
 
-        <Button Grid.Row="5" Grid.Column="0" Command="{Binding SavedCommand}" Width="80">Save</Button>
+        <Button Grid.Row="6" Grid.Column="0" Command="{Binding SavedCommand}" Width="80">Save</Button>
 
-        <Button Grid.Row="5" Grid.Column="0" Command="{Binding UpdateCommand}" HorizontalAlignment="Left" Width="80">Update</Button>
+        <Button Grid.Row="6" Grid.Column="0" Command="{Binding UpdateCommand}" HorizontalAlignment="Left" Width="80">Update</Button>
     </Grid>
 
 </Window>
